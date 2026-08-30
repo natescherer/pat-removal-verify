@@ -1,0 +1,20 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_src_path: C:\Users\nate\AppData\Local\Temp/verifysrc
+agent_instructions: true
+author_name: Nate Scherer
+code_coverage: false
+copyright_year: '2026'
+developer_platform: GitHub
+github_org: None
+github_username: natescherer
+license: None
+lifecycle: Stable
+project_description: 'Sandbox: verifying REPO_MAINTENANCE_PAT removal end to end -
+    safe to delete'
+project_initialized: true
+project_name: PAT Removal Verify
+project_type: Standard
+project_visibility: Public
+repo_name: pat-removal-verify
+repo_setup_actions: Create Repo
+zensical_target: GitHub Pages
