@@ -1,4 +1,10 @@
 # Changelog
+## 0.0.3 (2026-08-30)
+
+### Fixes
+
+- read release version from knope-current-version.json (#7)
+
 ## 0.0.2 (2026-08-30)
 
 ### Fixes
