@@ -33,9 +33,13 @@ jobs:
         # https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow).
         # workflow_dispatch is a documented exception to that rule, so dispatching it
         # directly here reaches the same result without needing a PAT.
-        # Reads the tag via the API rather than local git: Knope creates the release
-        # through the GitHub API, so the job's own checkout never locally fetches the
-        # new tag ref.
-        run: gh workflow run docs-auto-zensical.yml -f tag="$(gh release view --json tagName -q .tagName)"
+        # Reads the version straight from knope-current-version.json (already updated
+        # by PrepareRelease and merged in with this PR, no separate API round-trip
+        # needed) rather than local `git describe`: knope creates the release through
+        # the GitHub API, so the job's own checkout never locally fetches the new tag
+        # ref.
+        run: |
+          version=$(jq -r .version .config/knope-current-version.json)
+          gh workflow run docs-auto-zensical.yml -f tag="v$version"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
